@@ -20,5 +20,4 @@ public class CollectionView {
             System.out.println(xyz+" : "+map.get(xyz));
 
     }
-
 }

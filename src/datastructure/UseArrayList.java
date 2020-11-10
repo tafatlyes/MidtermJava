@@ -35,22 +35,19 @@ public class UseArrayList {
         System.out.println(arrayList.get(1));
 
 
-//        System.out.println("======let's use for loop=======");
-//        for (String abc : hakimList)
-//            System.out.println(abc);
-//
-//        System.out.println("=====let's use while loop with Iterator====");
-//        Iterator<String> hakim = hakimList.iterator();
-//        while (hakim.hasNext())
-//            System.out.println(hakim.next());
-//
-//
-//        System.out.println("=======let's sort the data=======");
-//        Collections.sort(hakimList);
-//        System.out.println(hakimList);
+        System.out.println("Using for loop:");
+        for (String s : arrayList)
+            System.out.println(s);
+
+        System.out.println("using while loop with Iterator");
+        Iterator<String> itter = arrayList.iterator();
+        while (itter.hasNext())
+            System.out.println(itter.next());
 
 
-
+        System.out.println("sorting data:");
+        Collections.sort(arrayList);
+        System.out.println(arrayList);
     }
 
 }
