@@ -13,19 +13,13 @@ public class FindMissingNumber {
         System.out.println("The missing number from the array is: "+getMissingNo(array, array.length));
     }
 
-        static int getMissingNo(int a[], int n)
-        {
+        static int getMissingNo(int a[], int n) {
             int total = 1;
-            for (int i = 2; i <= (n + 1); i++)
-            {
+            for (int i = 2; i <= (n + 1); i++) {
                 total += i;
                 total -= a[i - 2];
             }
             return total;
         }
-
-
-
-
     }
 

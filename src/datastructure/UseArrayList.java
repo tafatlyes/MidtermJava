@@ -1,5 +1,11 @@
 package datastructure;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+
 public class UseArrayList {
 
     public static void main(String[] args) {
@@ -9,6 +15,41 @@ public class UseArrayList {
          * Store all the sorted data into one of the databases.
          *
          */
+
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        arrayList.add("Lyes");
+        arrayList.add("Tafat");
+        arrayList.add("PNT");
+        arrayList.add("2020");
+        arrayList.add("JAVA");
+        arrayList.add(1, "first");
+        arrayList.add(2, "second");
+        arrayList.add(3, "third");
+        arrayList.add(4, "fourth");
+
+        arrayList.remove("JAVA");
+        arrayList.remove(4);
+
+        System.out.println(arrayList);
+        System.out.println(arrayList.get(1));
+
+
+//        System.out.println("======let's use for loop=======");
+//        for (String abc : hakimList)
+//            System.out.println(abc);
+//
+//        System.out.println("=====let's use while loop with Iterator====");
+//        Iterator<String> hakim = hakimList.iterator();
+//        while (hakim.hasNext())
+//            System.out.println(hakim.next());
+//
+//
+//        System.out.println("=======let's sort the data=======");
+//        Collections.sort(hakimList);
+//        System.out.println(hakimList);
+
+
 
     }
 

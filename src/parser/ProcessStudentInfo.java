@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import databases.ConnectToSqlDB;
 import org.xml.sax.SAXException;
 
 
@@ -41,10 +42,10 @@ public class ProcessStudentInfo {
         String pathQtp = System.getProperty("user.dir") + "/src/parser/qtp.xml";
         String tag = "id";
         //Create ConnectToSqlDB Object
-
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
         //Declare a Map with List<String> into it.
         Map<String, List<Student>> list = new LinkedHashMap<String, List<Student>>();
-				
+
 				/*Declare 2 ArrayList with Student data type to store Selenium student into one of the ArrayList and
 				  Qtp student into another ArrayList. */
 
@@ -55,10 +56,10 @@ public class ProcessStudentInfo {
         XmlReader xmlReader = new XmlReader();
 
         //Parse Data using parseData method and then store data into Selenium ArrayList.
-        seleniumStudents = xmlReader.parseData(tag, pathSelenium);
+//        seleniumStudents = xmlReader.parseData(tag, pathSelenium);
 
         //Parse Data using parseData method and then store data into Qtp ArrayList.
-
+        seleniumStudents = xmlReader.parseData(tag, pathSelenium);
         //add Selenium ArrayList data into map.
 
         //add Qtp ArrayList data into map.
@@ -66,15 +67,16 @@ public class ProcessStudentInfo {
         //Retrieve map data and display output.
 
         //Store Qtp data into Qtp table in Database
-        //connectToSqlDB.insertDataFromArrayListToMySql(seleniumStudents, "qtp","studentList");
+        //connectToSqlDB.insertIntoSqlDB(seleniumStudents,"qtp"); to correct
 
         //Store Selenium data into Selenium table in Database
-        List<Student> stList = new ArrayList<>();
+
         //Retrieve Qtp students from Database
 
-        for (Student st : stList) {
-            System.out.println(st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
-        }
+//        List<Student> stList = connectToSqlDB.readStudentListFromSqlDB("qtp");      to correct
+//        for(Student st:stList){                                                       to correct
+//            System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());  to correct
+//        }
 
         //Retrieve Selenium students from Database
 
