@@ -17,10 +17,10 @@ import parser.Student;
 
 public class ConnectToSqlDB {
 
-    public static Connection connect = null;
-    public static Statement statement = null;
-    public static PreparedStatement ps = null;
-    public static ResultSet resultSet = null;
+    public static Connection connect;
+    public static Statement statement;
+    public static PreparedStatement ps;
+    public static ResultSet resultSet;
 
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
@@ -75,6 +75,7 @@ public class ConnectToSqlDB {
         for (User user : list) {
             System.out.println(user.getStName() + " " + user.getStID() + " " + user.getStDOB());
         }
+
     }
 
     public List<String> readDataBase(String tableName, String columnName) throws Exception {
@@ -85,6 +86,7 @@ public class ConnectToSqlDB {
             statement = connect.createStatement();
             resultSet = statement.executeQuery("select * from " + tableName);
             data = getResultSetData(resultSet, columnName);
+
         } catch (ClassNotFoundException e) {
             throw e;
         } finally {
